@@ -11,7 +11,7 @@
 - Rollins College
 
 ## Goal
-Our goal is to create a more connected campus where people are able to find things that interest them and to meet people with similar interests and activities.
+To create a more connected campus where people are able to find their interests and meet people with similar passions and hobbies.
 
 ## Overview
 - **Innovative, AI-powered website**: Designed to enhance student engagement and connectivity within the Rollins Community.
