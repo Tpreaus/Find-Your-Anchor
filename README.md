@@ -6,6 +6,6 @@ Link to project proposal: https://docs.google.com/document/d/1bvUzB20GmRMansoZGx
 
 Group Members: Theodore Preaus, Philip Clarke, Trevor Dorfman, Fredrik Bang Andreasen
 
-Front End - Fredrik, Trevor
+Front End - Fredrik, Philip
 
-Backend - Theodore, Philip
+Backend - Theodore, Trevor
