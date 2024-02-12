@@ -8,4 +8,4 @@ Group Members: Theodore Preaus, Philip Clarke, Trevor Dorfman, Fredrik Bang Andr
 
 Front End - Fredrik, Trevor
 
-Backend - Thedore, Philip
+Backend - Theodore, Philip
