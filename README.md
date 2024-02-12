@@ -1,4 +1,4 @@
-# Find-Your-Anchor Project
+# Find-Your-Anchor
 
 ## Team Members
 - Theodore Preaus
