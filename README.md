@@ -3,7 +3,7 @@
 ## Team Members
 - Theodore Preaus
 - Philip Clarke
-- Trevor Dorfman
+- Trevor "T-dot" Dorfman
 - Fredrik Bang Andreasen
 
 ## Course Information
