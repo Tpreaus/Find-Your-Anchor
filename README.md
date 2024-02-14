@@ -4,7 +4,7 @@
 - Theodore Preaus
 - Philip Clarke
 - Trevor "T-dot" Dorfman
-- Fredrik-Bang Andreasen
+- Fredrik Bang-Andreasen
 
 ## Course Information
 - CMS 484 - Capstone
