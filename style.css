@@ -33,3 +33,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.small-right {
+    width: 500px; /* Adjust the width as needed */
+    float: right;
+    margin: 0 0 20px 20px; /* Adjust margin as needed */
+}
