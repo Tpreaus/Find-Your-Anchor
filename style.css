@@ -1,0 +1,20 @@
+/* styles.css */
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+/* Custom styles for larger dropdown */
+.w3-button {
+    font-size: 40px; /* Increase font size */
+    padding: 16px 24px; /* Increase padding for a larger button */
+}
+
+.w3-dropdown-content a {
+    font-size: 18px; /* Increase font size in dropdown content */
+    padding: 12px 24px; /* Increase padding for larger dropdown items */
+}
+
+/* Increase the size of the dropdown hover content */
+.w3-dropdown-hover .w3-dropdown-content { 
+    width: auto; /* Adjust width as necessary */
+}
