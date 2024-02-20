@@ -1,20 +1,51 @@
-/* styles.css */
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
 
-/* Custom styles for larger dropdown */
+body, h1, h2, h3, h4, h5, h6 { font-family: "Lato", sans-serif; }
+.w3-bar, h1, button { font-family: "Montserrat", sans-serif; }
+.fa-anchor, .fa-coffee { font-size: 200px; }
+
+.w3-bar.w3-blue.w3-card.w3-left-align.w3-large {
+    background-color: transparent; 
+    color: #ffffff; 
+    padding: 6px 13px; 
+}
+
+.w3-container.w3-blue.w3-center {
+    background-image: url('jj.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    color: #ffffff; /* Text color */
+    padding: 120px 16px; 
+}
+
+
 .w3-button {
-    font-size: 40px; /* Increase font size */
-    padding: 16px 24px; /* Increase padding for a larger button */
+    font-size: 20px; 
+    padding: 8px 16px; 
 }
 
 .w3-dropdown-content a {
-    font-size: 18px; /* Increase font size in dropdown content */
-    padding: 12px 24px; /* Increase padding for larger dropdown items */
+    font-size: 16px; 
+    padding: 8px 16px; 
 }
 
-/* Increase the size of the dropdown hover content */
+
 .w3-dropdown-hover .w3-dropdown-content { 
-    width: auto; /* Adjust width as necessary */
+    width: auto; 
 }
+
+.w3-bar .w3-bar-item img {
+    height: 85px !important; 
+    width: 200px;
+    margin-right: 20px !important; /* Adjusted margin to keep elements reasonably spaced */
+  }
+  
+  .w3-bar .w3-bar-item.w3-right {
+    padding: 7.5px 10px !important; 
+    font-size: 30px !important; 
+  }
+
+  .w3-bar .w3-bar-item.w3-button {
+    font-size: 30px; 
+    padding: 12px 24px; 
+    line-height: 60px;
+  }
