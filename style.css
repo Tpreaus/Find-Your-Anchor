@@ -87,10 +87,17 @@ button{
   padding: 15px 0;
   text-align: center;
   margin: 20px 10px;
-  border-radius: 25px;
+  border-radius: 25px !important;
   font-weight: bold;
   border: 2px solid orange;
   background: transparent;
   color: #fff;
   cursor: pointer;
+}
+
+
+.form-select{
+  color: black !important;
+  width: 600px !important;
+  text-align: center !important;
 }
