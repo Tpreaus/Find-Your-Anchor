@@ -101,3 +101,10 @@ button{
   width: 600px !important;
   text-align: center !important;
 }
+
+.aboutInfo{
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 200px;
+}
