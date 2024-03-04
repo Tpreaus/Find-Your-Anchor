@@ -9,7 +9,7 @@
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(rgba(0,0,0,0.75), 
-  rgba(0,0,0,0.75)), url(assets/rollins.jpg) ;
+  rgba(0,0,0,0.75)), url(/assets/rollins.jpg) ;
   background-size: cover;
   background-position: center;
 }
@@ -156,4 +156,56 @@ button{
   overflow: hidden;
   position: relative;
   margin: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.club-card {
+  width: 300px; /* Adjust as needed */
+  border: 1px solid #000; /* Adjust as needed */
+}
+
+.club-image img {
+  width: 100%;
+  height: auto;
+}
+
+.club-info {
+  padding: 10px; /* Adjust as needed */
+}
+
+.card:hover {
+  background-color: ghostwhite;
+  color: black;
+  border: 2px solid black;
+}
+
+.central-image {
+  width: 300px; /* Adjust as needed */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* Adjust as needed */
+}
+
+.central-image img {
+  width: 50%;
+}
+
+.adminbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* This makes the div take up the full height of the viewport */
+  text-align: center; /* This centers the text horizontally */
+  width: 60%;
+  margin: auto;
+}
+
+.adminInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
