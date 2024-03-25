@@ -1,0 +1,153 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/****************** NAVBAR STYLING ******************/
+/*NAV BAR BRAND */
+.navbar-brand{
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(56,99,129);
+  text-transform: uppercase;
+  /*CHANGE FONT FAMILY*/
+}
+
+.navbar-brand:hover{
+  color: black;
+}
+
+/*NAV BAR LINKS */
+.nav-link{
+  margin-right: 10px;
+  margin-left: 10px;
+  color: black;
+  text-transform: uppercase;
+   /*CHANGE FONT FAMILY*/
+}
+
+.nav-link:hover{
+  color: black; 
+}
+
+/*NAV BAR SEARCH */
+.search{
+  
+  height: 40px;
+  width: 80%;
+  border-radius: 60px;
+  outline: none;
+  margin-right: -35px;
+  border: 2px solid rgb(56,99,129)
+  
+}
+
+.btn0{
+  height: 40px;
+  width: 80%;
+  outline: none;
+  border: none;
+  background: rgb(56,99,129);
+  color: white;
+  border-radius: 60px;
+  font-weight: 700;
+   /*CHANGE FONT FAMILY*/
+}
+
+.btn0:hover{
+  background-color: rgb(108,150,182);
+}
+
+
+/****************** STYLING FOR MAIN ******************/
+.main{
+  /* COVER BACKGROUND INDEX */
+
+  /*'URL' TO GET BACKGROUND IMAGE*/
+
+  background: url(assets/matese-fields-pvHma684eEI-unsplash.jpg);
+
+  background-size: cover;
+  height: 100vh;
+  background-position: 50% 50%;
+  width: 100%;
+}
+
+.main h1{
+  font-size: 4rem;
+  font-weight: 700;
+}
+  
+.btn1{
+  height: 45px;
+  width: 35%;
+  border: none;
+  outline: none;
+  background-color: rgb(56,99,129);
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+}
+
+.btn1:hover{
+  background-color: rgb(108,150,182);
+  transition: 0.5s;
+}
+
+/* ICONS */
+
+.mission-title{
+  padding-bottom: 0 !important;
+}
+.mission{
+  padding-top: 0 !important;
+}
+
+.ri-group-fill, 
+.ri-school-fill,
+.ri-landscape-fill,
+.ri-time-fill, 
+.ri-mac-fill, 
+.ri-shirt-fill
+{
+  color: rgb(56,99,129);
+}
+
+.h1{
+  font-weight: 700;
+}
+
+.product{
+  background: gainsboro;
+}
+
+.card:hover{
+
+  /*  
+  shadow effect behind
+  use box shadow generator to adjust/change css
+  */
+  -webkit-box-shadow: 10px 10px 16px 4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 16px 4px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 16px 4px rgba(0,0,0,0.75);
+  transition: 0.5s;
+}
+
+.assessment{
+  background-color: gainsboro;
+}
+
+
+/* use URL */
+.apple{
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(assets/matese-fields-pvHma684eEI-unsplash.jpg) no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+}
+
+
+.footer{
+  background-color: rgb(108,150,182) !important;
+}
