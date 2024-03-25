@@ -1,18 +1,10 @@
-# Creating example documents
-doc_1 = "A whopping 96.5 percent of water on Earth is in our oceans, covering 71 percent of the surface of our planet. And at any given time, about 0.001 percent is floating above us in the atmosphere. If all of that water fell as rain at once, the whole planet would get about 1 inch of rain."
 
-doc_2 = "One-third of your life is spent sleeping. Sleeping 7-9 hours each night should help your body heal itself, activate the immune system, and give your heart a break. Beyond that--sleep experts are still trying to learn more about what happens once we fall asleep."
 
-doc_3 = "A newborn baby is 78 percent water. Adults are 55-60 percent water. Water is involved in just about everything our body does."
+import pandas as pd
 
-doc_4 = "While still in high school, a student went 264.4 hours without sleep, for which he won first place in the 10th Annual Great San Diego Science Fair in 1964."
+data = pd.read_csv('clubData/rollins_activities_and_descriptions.csv')
 
-doc_5 = "We experience water in all three states: solid ice, liquid water, and gas water vapor."
-
-# Create corpus
-corpus = [doc_1, doc_2, doc_3, doc_4, doc_5]
-
-# Code source: https://www.analyticsvidhya.com/blog/2016/08/beginners-guide-to-topic-modeling-in-python/
+corpus = data['Description']
 
 import string
 import nltk
@@ -23,7 +15,12 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 
 # remove stopwords, punctuation, and normalize the corpus
-stop = set(stopwords.words('english'))
+# Filter
+filter_out = {'club', 'rollins', 'student', 'students', 'organization', 'organizations', 
+              'campus', 'college', 'university', 'community', 'group', 'groups', 'association', 
+              'associations', 'society', 'societies'}
+
+stop = set(stopwords.words('english')).union(filter_out)
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
 
@@ -47,28 +44,21 @@ from gensim.models import LsiModel
 lsa = LsiModel(doc_term_matrix, num_topics=3, id2word = dictionary)
 
 # LSA model
-print(lsa.print_topics(num_topics=3, num_words=3))
+print(lsa.print_topics(num_topics=100, num_words=3))
 
-"""
-[
-(0, '0.555*"water" + 0.489*"percent" + 0.239*"planet"'), 
-(1, '0.361*"sleeping" + 0.215*"hour" + 0.215*"still"'), 
-(2, '-0.562*"water" + 0.231*"rain" + 0.231*"planet"')
-]
-"""
 
 from gensim.models import LdaModel
 
 # LDA model
-lda = LdaModel(doc_term_matrix, num_topics=3, id2word = dictionary)
+lda = LdaModel(doc_term_matrix, num_topics=100, id2word = dictionary)
 
-# Results
-print(lda.print_topics(num_topics=3, num_words=3))
+# Get dominant topic for each document
+dominant_topics = []
+for doc_bow in doc_term_matrix:
+    topic_distribution = lda.get_document_topics(doc_bow)
+    dominant_topic = sorted(topic_distribution, key=lambda x: x[1], reverse=True)[0]
+    dominant_topics.append(dominant_topic)
 
-"""
-[
-(0, '0.071*"water" + 0.025*"state" + 0.025*"three"'), 
-(1, '0.030*"still" + 0.028*"hour" + 0.026*"sleeping"'), 
-(2, '0.073*"percent" + 0.069*"water" + 0.031*"rain"')
-]
-"""
+# Print dominant topic for each document
+for i, topic in enumerate(dominant_topics):
+    print(f"Document {i+1} has dominant topic {topic[0]} with probability {topic[1]}")
