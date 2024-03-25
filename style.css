@@ -95,6 +95,16 @@
   transition: 0.5s;
 }
 
+.btn1, .select-institution{
+  width: 20% !important;
+}
+
+.form-select-lg{
+  height: 45px;
+  width: 50%;
+  border-radius: 60px;
+}
+
 /* ICONS */
 
 .mission-title{
