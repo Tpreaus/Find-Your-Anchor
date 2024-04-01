@@ -49,7 +49,11 @@ for doc_bow in doc_term_matrix:
     topic_distribution = lda.get_document_topics(doc_bow)
     dominant_topic = sorted(topic_distribution, key=lambda x: x[1], reverse=True)[0]
     dominant_topics.append(dominant_topic)
-
-# Print dominant topic for each document
+    
+# Print dominant topic and associated words for each document
 for i, topic in enumerate(dominant_topics):
-    print(f"Document {i+1} has dominant topic {topic[0]} with probability {topic[1]}")
+    topic_num = topic[0]
+    topic_words = lda.show_topic(topic_num)
+    top_words = ", ".join([word[0] for word in topic_words])
+    print(f"Document {i+1} has dominant topic {topic_num} with probability {topic[1]} and associated words: {top_words}")
+
