@@ -38,15 +38,6 @@ from gensim import corpora
 dictionary = corpora.Dictionary(clean_corpus)
 doc_term_matrix = [dictionary.doc2bow(doc) for doc in clean_corpus]
 
-from gensim.models import LsiModel
-
-# LSA model
-lsa = LsiModel(doc_term_matrix, num_topics=3, id2word = dictionary)
-
-# LSA model
-print(lsa.print_topics(num_topics=100, num_words=3))
-
-
 from gensim.models import LdaModel
 
 # LDA model
