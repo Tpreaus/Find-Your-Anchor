@@ -1,11 +1,15 @@
+# Import the necessary libraries
 import pandas as pd
 
+# Load the data
 data = pd.read_csv('clubData/rollins_activities_and_descriptions.csv')
 
+# Store descriptions
 corpus = data['Description']
 # Store activity names
 activity_names = data['Activity Name'].tolist()
 
+# Print the first 5 descriptions
 import string
 import nltk
 nltk.download('stopwords')
@@ -24,6 +28,7 @@ stop = set(stopwords.words('english')).union(filter_out)
 exclude = set(string.punctuation)
 lemma = WordNetLemmatizer()
 
+# Function to clean the text
 def clean(doc):
     stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
     punc_free = "".join(ch for ch in stop_free if ch not in exclude)
