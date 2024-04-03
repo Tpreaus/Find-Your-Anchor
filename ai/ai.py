@@ -1,10 +1,10 @@
-
-
 import pandas as pd
 
 data = pd.read_csv('clubData/rollins_activities_and_descriptions.csv')
 
 corpus = data['Description']
+# Store activity names
+activity_names = data['Activity Name'].tolist()
 
 import string
 import nltk
@@ -15,7 +15,7 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 
 # remove stopwords, punctuation, and normalize the corpus
-# Filter
+# Filter out these words
 filter_out = {'club', 'rollins', 'student', 'students', 'organization', 'organizations', 
               'campus', 'college', 'university', 'community', 'group', 'groups', 'association', 
               'associations', 'society', 'societies'}
@@ -49,14 +49,10 @@ for doc_bow in doc_term_matrix:
     topic_distribution = lda.get_document_topics(doc_bow)
     dominant_topic = sorted(topic_distribution, key=lambda x: x[1], reverse=True)[0]
     dominant_topics.append(dominant_topic)
-    
-
-# Store activity names
-activity_names = data['Activity Name'].tolist()
 
 # Print dominant topic and associated words for each document
 for i, topic in enumerate(dominant_topics):
     topic_num = topic[0]
     topic_words = lda.show_topic(topic_num)
     top_words = ", ".join([word[0] for word in topic_words])
-    print(f"Activity '{activity_names[i]}' has dominant topic {topic_num} with probability {topic[1]} and associated words: {top_words}")
+    print(f"Activity '{activity_names[i]}' with associated words: {top_words}")
