@@ -1,8 +1,9 @@
 # Import the necessary libraries
 import pandas as pd
+import json
 
 # Load the data
-data = pd.read_csv('clubData/rollins_activities_and_descriptions.csv')
+data = pd.read_csv('/Users/theodorepreaus/VScode/FindYourAnchor/Find-Your-Anchor/clubData/rollins_activities_and_descriptions.csv')
 
 # Store descriptions
 corpus = data['Description']
@@ -55,9 +56,10 @@ for doc_bow in doc_term_matrix:
     dominant_topic = sorted(topic_distribution, key=lambda x: x[1], reverse=True)[0]
     dominant_topics.append(dominant_topic)
 
-# Print dominant topic and associated words for each document
+# Print array with activity name and topic num
+activity_topic_array = []
 for i, topic in enumerate(dominant_topics):
-    topic_num = topic[0]
-    topic_words = lda.show_topic(topic_num)
-    top_words = ", ".join([word[0] for word in topic_words])
-    print(f"Activity '{activity_names[i]}' with associated words: {top_words}")
+    activity_topic_array.append((activity_names[i], topic[0]))
+print(activity_topic_array)
+
+
