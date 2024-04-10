@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs List</title>
+</head>
+<body>
+    <h1>Clubs List</h1>
+
+    <ul id="clubsList"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('http://localhost:3005/api/clubs'); // Update URL as needed
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const clubsData = await response.json(); // Retrieve JSON data from response
+
+                const clubsList = document.getElementById('clubsList');
+                clubsList.innerHTML = ''; // Clear previous list items
+
+                // Assuming clubsData is an array of club objects with a 'name' property
+                clubsData.forEach(club => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = club['Description']; // Display club name ('Activity Name' property)
+                    clubsList.appendChild(listItem); // Append <li> to <ul> element
+                });
+
+            } catch (error) {
+                console.error('Error fetching clubs:', error);
+                alert('Failed to fetch clubs. Please check the console for details.');
+            }
+        });
+    </script>
+</body>
+</html>
