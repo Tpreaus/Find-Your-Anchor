@@ -18,17 +18,34 @@
   color: black;
 }
 
-/*NAV BAR LINKS */
-.nav-link{
+/* NAV BAR LINKS */
+/* NAV BAR LINKS */
+.nav-link {
   margin-right: 10px;
   margin-left: 10px;
   color: black;
+  font-weight: 500;
   text-transform: uppercase;
-   /*CHANGE FONT FAMILY*/
+  /* CHANGE FONT FAMILY */
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover{
-  color: black; 
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before,
+.current-nav::before {
+  width: 100%;
 }
 
 /*NAV BAR SEARCH */
