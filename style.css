@@ -176,3 +176,9 @@
 .main-assessment{
   background-color: gainsboro !important;
 }
+
+.club-card {
+  background-image: url('assets/guilherme-maggieri-OH5g9IgcMWs-unsplash.jpg'); /* Replace 'assets/generic-club-image.jpg' with your generic image path */
+  background-size: cover;
+  background-position: center;
+}
