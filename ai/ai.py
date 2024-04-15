@@ -1,18 +1,27 @@
 # Import the necessary libraries
 import pandas as pd
 import json
+import requests
+import string
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
+from gensim import corpora
+from gensim.models import LdaModel
 
-# Load the data
-data = pd.read_csv('/Users/theodorepreaus/VScode/FindYourAnchor/Find-Your-Anchor/clubData/rollins_activities_and_descriptions.csv')
+# Fetch the data from the API
+response = requests.get('http://localhost:3005/api/clubs')
+data = response.json()
+
+# Convert the data to a pandas DataFrame
+data = pd.DataFrame(data)
 
 # Store descriptions
 corpus = data['Description']
 # Store activity names
 activity_names = data['Activity Name'].tolist()
 
-# Print the first 5 descriptions
-import string
-import nltk
+# Clean the data
 nltk.download('stopwords')
 nltk.download('wordnet')  
 nltk.download('omw-1.4')  
@@ -38,13 +47,9 @@ def clean(doc):
 
 clean_corpus = [clean(doc).split() for doc in corpus]
 
-from gensim import corpora
-
 # Creating document-term matrix 
 dictionary = corpora.Dictionary(clean_corpus)
 doc_term_matrix = [dictionary.doc2bow(doc) for doc in clean_corpus]
-
-from gensim.models import LdaModel
 
 # LDA model
 lda = LdaModel(doc_term_matrix, num_topics=100, id2word = dictionary)
@@ -61,5 +66,4 @@ activity_topic_array = []
 for i, topic in enumerate(dominant_topics):
     activity_topic_array.append((activity_names[i], topic[0]))
 print(activity_topic_array)
-
 
