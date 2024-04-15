@@ -6,6 +6,22 @@
 }
 
 /****************** NAVBAR STYLING ******************/
+/*Footer Styling*/
+footer {
+  background-color: #18273E; /* Replace with your desired color */
+  color: white !important; /* Replace with your desired text color */
+
+}
+
+.nav-icons{
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.navbar{
+  background-color: #18273E !important;
+}
 /*NAV BAR BRAND */
 .navbar-brand{
   font-size: 2rem;
@@ -24,7 +40,7 @@
 .nav-link {
   margin-right: 10px;
   margin-left: 10px;
-  color: black !important;
+  color: white !important;
   font-weight: 500;
   text-transform: uppercase;
   /* CHANGE FONT FAMILY */
@@ -97,6 +113,7 @@
 .main h1{
   font-size: 4rem;
   font-weight: 700;
+  color: #18273E !important;
 }
   
 .btn1{
@@ -178,9 +195,6 @@
 }
 
 
-.footer{
-  background-color: rgb(108,150,182) !important;
-}
 
 
 .club-suggestion{
