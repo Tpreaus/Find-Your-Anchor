@@ -32,12 +32,19 @@
         <!-- NAVBAR ITEMS -->
         <!-- COLLAPSABLE -->
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-          <ul class="nav col-12 col-md-auto- mb-2 justify-content-center mb-md-0">
+
+          <a href="index.html" class="d-flex mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="assets/logo-new.jpeg" alt="" class="bi me-2" width="120">
+          </a>
+
+          <ul class="nav col-12 col-md-auto- mb-2 mb-md-0">
+
+
             <li class="nav-item">
-              <a class="nav-link" href="browse-page.html">Browse</a>
+              <a class="nav-link" href="browse-page.html">Browse Clubs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="assessment.html">Assessment</a>
+              <a class="nav-link" href="assessment.html">Take Assessment</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -66,7 +73,7 @@
           <div class="col-lg-7 pt-5 text-center">
             <h1 pt-5>FIND YOUR ANCHOR</h1>
             <select class="form-select-lg py-2" id="autocompleteSelect" aria-label="Default select example">
-              <option value="">Open this select menu</option>
+              <option value="">Select institution</option>
             </select>
             <div id="autocompleteOptions" class="autocomplete-items"></div>
             <button class="btn1 select-institution mt-3">Continue</button>
@@ -231,18 +238,21 @@
 
 
     <!-- ====================================== FOOTER ====================================== -->
-    <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="browse-page.html" class="nav-link px-2 text-body-secondary">Browse</a></li>
-          <li class="nav-item"><a href="assessment.html" class="nav-link px-2 text-body-secondary">Assessment</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link px-2 text-body-secondary">About</a></li>
-          <li class="nav-item"><a href="team.html" class="nav-link px-2 text-body-secondary">Team</a></li>
-          <li class="nav-item"><a href="admin-login.html" class="nav-link px-2 text-body-secondary">Admin</a></li>
-        </ul>
-        <p class="text-center text-body-secondary">Find Your Anchor © 2024</p>
-      </footer>
-    </div>
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="index.html" class="d-flex mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="assets/logo-new.jpeg" alt="" class="bi me-2" width="120">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary" style="color: white !important;">© Find Your Anchor</span>
+      </div>
+  
+      <ul class="nav nav-icons col-md-4 justify-content-end list-unstyled d-flex">
+        <li><i class="ri-time-line"></i></li>
+        <li><i class="ri-time-line"></i></li>
+        <li><i class="ri-time-line"></i></li>
+        <li><i class="ri-time-line"></i></li>
+      </ul>
+    </footer>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
