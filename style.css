@@ -56,7 +56,7 @@ footer {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: orange;
+  background-color: #FDD786;
   transition: all 0.3s ease-in-out;
   color: black !important;
 }
@@ -89,12 +89,23 @@ footer {
   border-radius: 60px;
   font-weight: 700;
    /*CHANGE FONT FAMILY*/
+  text-decoration: none;
 }
 
 .btn0:hover{
   background-color: rgb(108,150,182);
 }
 
+.navbar-toggler{
+  background-color: #FDD786 !important;
+  border-width: 2px;
+  border-color: #FDD786;
+  color: orange;
+}
+
+.navbar-toggler:active{
+  border-color: #FDD786;
+}
 
 /****************** STYLING FOR MAIN ******************/
 .main{

@@ -27,34 +27,43 @@
   <body>
     <!-- ====================================== NAVBAR ====================================== -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container">
-
-        <!-- NAVBAR ITEMS -->
-        <!-- COLLAPSABLE -->
-        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-          <ul class="nav col-12 col-md-auto- mb-2 justify-content-center mb-md-0">
+      <div class="container-fluid">
+        <nav class="navbar bg-body-tertiary">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/logo-new.jpeg" alt="Bootstrap" width="120">
+            </a>
+          </div>
+        </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="browse-page.html">Browse</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="assessment.html">Assessment</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="browse-page.html">Clubs</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link current-nav" href="team.html">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin-login.html">Admin</a>
-            </li>
-          </ul>
 
-          <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
-          </div>
-          
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+
+
+          </ul>
+          <form class="d-flex" role="search">
+            <button onclick="window.location.href='admin-login.html'" class="btn0 btn-outline-success" type="button" style="width: 140px;">Admin Log In</button>
+          </form>
         </div>
       </div>
     </nav>
