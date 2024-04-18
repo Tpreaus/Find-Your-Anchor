@@ -1,3 +1,5 @@
+
+/****************** GENERAL STYLING ******************/
 *{
   padding: 0;
   margin: 0;
@@ -5,14 +7,12 @@
   text-transform: uppercase;
 }
 
-/****************** NAVBAR STYLING ******************/
-/*Footer Styling*/
-footer {
-  background-color: #18273E; /* Replace with your desired color */
-  color: white !important; /* Replace with your desired text color */
-
+/****************** MAIN STYLING ******************/
+main{
+  background-color: #C3D7E0;
 }
 
+/****************** NAVBAR STYLING ******************/
 .nav-icons{
   color: white;
   width: 36px;
@@ -67,17 +67,32 @@ footer {
   color: black !important;
 }
 
-/*NAV BAR SEARCH */
-.search{
-  
-  height: 40px;
-  width: 80%;
-  border-radius: 60px;
-  outline: none;
-  margin-right: -35px;
-  border: 2px solid rgb(56,99,129)
-  
+.navbar-toggler{
+  background-color: #FDD786 !important;
+  border-width: 2px;
+  border-color: #FDD786;
+  color: orange;
 }
+
+.navbar-toggler:active{
+  border-color: #FDD786;
+}
+
+
+
+/****************** FOOTER STYLING ******************/
+  footer {
+    background-color: #18273E; /* Replace with your desired color */
+    color: white !important; /* Replace with your desired text color */
+  }
+
+
+
+
+
+
+
+/****************** BUTTONS ******************/
 
 .btn0{
   height: 40px;
@@ -96,37 +111,6 @@ footer {
   background-color: rgb(108,150,182);
 }
 
-.navbar-toggler{
-  background-color: #FDD786 !important;
-  border-width: 2px;
-  border-color: #FDD786;
-  color: orange;
-}
-
-.navbar-toggler:active{
-  border-color: #FDD786;
-}
-
-/****************** STYLING FOR MAIN ******************/
-.main{
-  /* COVER BACKGROUND INDEX */
-
-  /*'URL' TO GET BACKGROUND IMAGE*/
-
-  background: url(assets/matese-fields-pvHma684eEI-unsplash.jpg);
-
-  background-size: cover;
-  height: 100vh;
-  background-position: 50% 50%;
-  width: 100%;
-}
-
-.main h1{
-  font-size: 4rem;
-  font-weight: 700;
-  color: #18273E !important;
-}
-  
 .btn1{
   height: 45px;
   width: 35%;
@@ -151,6 +135,40 @@ footer {
   height: 45px;
   width: 50%;
   border-radius: 60px;
+}
+
+
+/****************** STYLING FOR INDEX PAGE ******************/
+.cover{
+  /* COVER BACKGROUND INDEX */
+
+  /*'URL' TO GET BACKGROUND IMAGE*/
+
+  background: url(assets/matese-fields-pvHma684eEI-unsplash.jpg);
+
+  background-size: cover;
+  height: 100vh;
+  background-position: 50% 50%;
+  width: 100%;
+}
+
+.cover h1{
+  font-size: 4rem;
+  font-weight: 700;
+  color: #18273E !important;
+}
+
+.index-action{
+  background-color: #C3D7E0 !important;
+}
+
+
+  
+/****************** STYLING FOR BROWSE CLUB PAGE ******************/
+.club-card {
+  background-image: url('assets/guilherme-maggieri-OH5g9IgcMWs-unsplash.jpg'); /* Replace 'assets/generic-club-image.jpg' with your generic image path */
+  background-size: cover;
+  background-position: center;
 }
 
 /* ICONS */
@@ -197,17 +215,6 @@ footer {
 }
 
 
-/* use URL */
-.apple{
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(assets/matese-fields-pvHma684eEI-unsplash.jpg) no-repeat;
-  background-size: cover;
-  height: 80vh;
-  width: 100%;
-}
-
-
-
-
 .club-suggestion{
   background-color: gainsboro;
 }
@@ -221,17 +228,10 @@ footer {
   background-color: gainsboro !important;
 }
 
-.club-card {
-  background-image: url('assets/guilherme-maggieri-OH5g9IgcMWs-unsplash.jpg'); /* Replace 'assets/generic-club-image.jpg' with your generic image path */
-  background-size: cover;
-  background-position: center;
-}
 
 
 
-
-
-/* STYLING FOR TEAM PAGE */
+/****************** STYLING FOR BROWSE CLUB PAGE ******************/
 .responsive-cell-block {
   min-height: 75px;
 }
