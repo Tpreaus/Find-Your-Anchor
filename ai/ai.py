@@ -52,7 +52,7 @@ dictionary = corpora.Dictionary(clean_corpus)
 doc_term_matrix = [dictionary.doc2bow(doc) for doc in clean_corpus]
 
 # LDA model
-lda = LdaModel(doc_term_matrix, num_topics=100, id2word = dictionary)
+lda = LdaModel(doc_term_matrix, num_topics=20, id2word = dictionary)
 
 # Get dominant topic for each document
 dominant_topics = []
