@@ -232,7 +232,7 @@ main{
 
 
 
-/****************** STYLING FOR BROWSE CLUB PAGE ******************/
+/****************** STYLING FOR TEAMS STYLING ******************/
 .responsive-cell-block {
   min-height: 75px;
 }
@@ -295,6 +295,8 @@ main{
   padding-right: 25px;
   padding-bottom: 30px;
   padding-left: 25px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .team-card-container {
