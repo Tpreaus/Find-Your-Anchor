@@ -4,7 +4,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-transform: uppercase;
 }
 
 /****************** MAIN STYLING ******************/
@@ -82,11 +81,13 @@ main{
 
 /****************** FOOTER STYLING ******************/
   footer {
-    background-color: #18273E; /* Replace with your desired color */
+    background-color: #18273E !important; /* Replace with your desired color */
     color: white !important; /* Replace with your desired text color */
   }
 
-
+  .footer{
+    background-color: #18273E;
+  }
 
 
 
@@ -358,4 +359,11 @@ main{
     margin-bottom: 25px;
     margin-left: 0px;
   }
+}
+
+
+
+/****************** STYLING FOR LOG IN PAGE ******************/
+.mb-2 .form-floating .email{
+  text-transform: uppercase;
 }
