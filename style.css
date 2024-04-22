@@ -4,7 +4,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-transform: uppercase;
 }
 
 /****************** MAIN STYLING ******************/
@@ -82,11 +81,13 @@ main{
 
 /****************** FOOTER STYLING ******************/
   footer {
-    background-color: #18273E; /* Replace with your desired color */
+    background-color: #18273E !important; /* Replace with your desired color */
     color: white !important; /* Replace with your desired text color */
   }
 
-
+  .footer{
+    background-color: #18273E;
+  }
 
 
 
@@ -231,7 +232,7 @@ main{
 
 
 
-/****************** STYLING FOR BROWSE CLUB PAGE ******************/
+/****************** STYLING FOR TEAMS STYLING ******************/
 .responsive-cell-block {
   min-height: 75px;
 }
@@ -294,6 +295,8 @@ main{
   padding-right: 25px;
   padding-bottom: 30px;
   padding-left: 25px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .team-card-container {
@@ -358,4 +361,11 @@ main{
     margin-bottom: 25px;
     margin-left: 0px;
   }
+}
+
+
+
+/****************** STYLING FOR LOG IN PAGE ******************/
+.mb-2 .form-floating .email{
+  text-transform: uppercase;
 }
