@@ -23,10 +23,10 @@ main{
 }
 /*NAV BAR BRAND */
 .navbar-brand{
-  font-size: 2rem;
-  font-weight: 500;
-  color: rgb(56,99,129);
-  text-transform: uppercase;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  color: rgb(56,99,129) !important;
+  text-transform: uppercase !important;
   /*CHANGE FONT FAMILY*/
 }
 
@@ -137,6 +137,8 @@ main{
   width: 50%;
   border-radius: 60px;
 }
+
+
 
 
 /****************** STYLING FOR INDEX PAGE ******************/
@@ -373,3 +375,20 @@ main{
 .mb-2 .form-floating .email{
   text-transform: uppercase;
 }
+
+
+/****************** STYLING BROWSE CARDS******************/
+.figure {
+  position: relative;
+  width: 100% !important;
+  height: 200px !important; /* Set the desired height */
+}
+
+.figure img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  object-fit: cover; /* Scale the image as needed to fill the container */
+  object-position: center; /* Center the image within the container */
+}
+
