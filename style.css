@@ -167,9 +167,13 @@ main{
   
 /****************** STYLING FOR BROWSE CLUB PAGE ******************/
 .club-card {
-  background-image: url('assets/guilherme-maggieri-OH5g9IgcMWs-unsplash.jpg'); /* Replace 'assets/generic-club-image.jpg' with your generic image path */
+  background-image: url('assets/default.webp'); /* Replace 'assets/generic-club-image.jpg' with your generic image path */
   background-size: cover;
   background-position: center;
+}
+
+.club-card {
+  color: white;
 }
 
 /* ICONS */
