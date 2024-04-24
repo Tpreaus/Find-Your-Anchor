@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Club = require('../models/Club'); // Assuming 'Club' is your Mongoose model
+const Club = require('../models/club'); // Assuming 'Club' is your Mongoose model
 
 // Retrieve all clubs
 router.get('/clubs', async (req, res) => {
