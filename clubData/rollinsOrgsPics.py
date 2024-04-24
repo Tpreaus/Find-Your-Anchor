@@ -68,9 +68,22 @@ activities = driver.find_elements(By.CSS_SELECTOR, "div[style*='font-weight: 600
 descriptions = driver.find_elements(By.CSS_SELECTOR, "p.DescriptionExcerpt")
 images = driver.find_elements(By.CSS_SELECTOR, "img")
 
+default_positions = [2, 30, 32, 33, 37, 42, 48, 57, 74, 77, 84, 132]  
+
 data_to_write = []
-for activity, description, image in zip(activities, descriptions, images):
-    data_to_write.append([activity.text, description.text, image.get_attribute('src')])
+image_index = 0  # Separate counter for the images list
+for index, (activity, description) in enumerate(zip(activities, descriptions)):
+    if index in default_positions:
+        image_url = ''  # Leave the image URL blank for clubs in default_positions
+    else:
+        if image_index < len(images):
+            image_url = images[image_index].get_attribute('src')
+            image_index += 1  # Only increment the image_index if an image is used
+        else:
+            image_url = ''  # In case there are fewer images than expected
+
+    data_to_write.append([activity.text, description.text, image_url])
+
 
 csv_file_dir = 'clubData'
 csv_file_path = os.path.join(csv_file_dir, 'rollins_activities_descriptions_images.csv')
