@@ -52,7 +52,7 @@ prompt = "\n".join(prompt_lines)
 
 
 
-api_key = 'sk-proj-zpFndZSmaygmwmlmWjchT3BlbkFJtRVbDMSfmy2zoH1qGbtC'
+api_key = '<fill>'
 
 client = OpenAI(api_key=api_key)
 
