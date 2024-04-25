@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const clubController = require('../controllers/clubController.js');
+const clubController = require('../controllers/clubcontroller.js');
 
 router.get('/clubs', clubController.getAllClubs); // Get all clubs
 router.post('/clubs', clubController.addClub); // Add a new club
