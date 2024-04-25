@@ -83,7 +83,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', async () => {
     try {
-      const response = await fetch('http://3.21.246.221:3005/api/clubs');
+      const response = await fetch('http://3.21.246.221/api/clubs');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -97,7 +97,18 @@
         col.className = 'col';
 
         const card = document.createElement('div');
-        card.className = 'card h-100 club-card'; // Add 'club-card' class for background image
+        card.className = 'card h-100';
+
+        // Image element for club
+        const image = document.createElement('img');
+        // Access the 'Image' property from the club object
+        if (club['Image'] && club['Image'] !== '') {
+          image.src = club['Image'];
+        } else {
+          image.src = 'assets/theo.jpeg'; // Provide a default image if the URL is not present
+        }
+        image.className = 'card-img-top';
+        image.alt = club['Activity Name'];
 
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
@@ -106,12 +117,13 @@
         title.className = 'card-title';
         title.textContent = club['Activity Name']; // Assuming 'Activity Name' is a property in club object
 
-        const schedule = document.createElement('p');
-        schedule.className = 'card-text';
-        schedule.textContent = 'Tue & Thu, 7:00pm - 8:30pm'; // Assuming 'Schedule' is a property in club object
+        const description = document.createElement('p');
+        description.className = 'card-text';
+        description.textContent = club['Description']; // Assuming 'Description' is also provided by the API
 
         cardBody.appendChild(title);
-        cardBody.appendChild(schedule);
+        cardBody.appendChild(description);
+        card.appendChild(image); // Append image to the card
         card.appendChild(cardBody);
         col.appendChild(card);
         clubsList.appendChild(col);
@@ -123,6 +135,8 @@
     }
   });
 </script>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
