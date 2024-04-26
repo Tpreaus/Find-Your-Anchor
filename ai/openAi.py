@@ -1,5 +1,7 @@
 from openai import OpenAI
 import requests
+from dotenv import load_dotenv
+import os
  
 
 clubs = []  # Initialize an empty list to store the clubs
@@ -42,7 +44,13 @@ except Exception as e:
 
 
 prompt_lines = []
+x = 0
+
+prompt_lines.append("Here are the clubs you can suggest:")
+
 for club in clubs:
+    prompt_lines.append(f"Club id: " + str(x))
+    x += 1
     prompt_lines.append(f"Club Name: {club['Club Name']}")
     prompt_lines.append(f"Club Description: {club['Club Description']}")
     prompt_lines.append("")  # Add an empty line between clubs for separation
@@ -51,7 +59,8 @@ for club in clubs:
 prompt = "\n".join(prompt_lines)
 
 
-api_key = 'sk-proj-zpFndZSmaygmwmlmWjchT3BlbkFJtRVbDMSfmy2zoH1qGbtC'
+load_dotenv()  # take environment variables from .env.
+api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=api_key)
 
@@ -59,7 +68,7 @@ client = OpenAI(api_key=api_key)
 completion = client.chat.completions.create(model="gpt-3.5-turbo",
 messages=[
     {"role": "system", "content": prompt},
-    {"role": "user", "content": "I love to climb, social justice, and race cars what three clubs would you recommend?"},
+    {"role": "user", "content": "I love to play chess, community service, and cats what three clubs would you recommend?"},
 ])
 
 # Extract and print the completed response message
