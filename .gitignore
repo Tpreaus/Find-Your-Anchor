@@ -1,4 +1,4 @@
 # Node.js dependencies
 node_modules/
 
-ai/.env
+backend/ai/.env

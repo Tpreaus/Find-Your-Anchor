@@ -29,3 +29,32 @@ exports.addClub = async (req, res) => {
     res.status(400).json({ message: "Error adding new club", error: error.message });
   }
 };
+
+exports.clubMatch = async (req, res) => {
+  const { spawn } = require('child_process');
+  let pythonOutput = '';
+
+  // The string to pass to the Python script
+  let myString = req.query.myString;
+
+// Run the Python script and pass the string as an argument
+const python = spawn('python', ['../ai/openAi.py', myString]);
+
+  // Listen for data from the script's stdout
+  python.stdout.on('data', (data) => {
+    pythonOutput += data.toString();
+  });
+
+  // Listen for data from the script's stderr
+  python.stderr.on('data', (data) => {
+    console.error(`stderr: ${data}`);
+  });
+
+  // Handle the script's close event
+  python.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+    // Send the Python script's output in the HTTP response
+    res.send(pythonOutput);
+  });
+};
+

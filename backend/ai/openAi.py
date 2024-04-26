@@ -2,7 +2,11 @@ from openai import OpenAI
 import requests
 from dotenv import load_dotenv
 import os
- 
+import sys
+
+# The first argument is the script name, so we get the second argument
+myString = sys.argv[1]
+
 
 clubs = []  # Initialize an empty list to store the clubs
 
@@ -68,7 +72,7 @@ client = OpenAI(api_key=api_key)
 completion = client.chat.completions.create(model="gpt-3.5-turbo",
 messages=[
     {"role": "system", "content": prompt},
-    {"role": "user", "content": "I love to play chess, community service, and cats what three clubs would you recommend?"},
+    {"role": "user", "content": myString},
 ])
 
 # Extract and print the completed response message
