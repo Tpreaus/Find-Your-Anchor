@@ -51,8 +51,7 @@ for club in clubs:
 prompt = "\n".join(prompt_lines)
 
 
-
-api_key = '<fill>'
+api_key = 'sk-proj-zpFndZSmaygmwmlmWjchT3BlbkFJtRVbDMSfmy2zoH1qGbtC'
 
 client = OpenAI(api_key=api_key)
 
