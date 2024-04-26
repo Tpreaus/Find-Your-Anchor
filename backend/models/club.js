@@ -1,4 +1,3 @@
-// models/RollinsClub.js
 const mongoose = require('mongoose');
 
 const rollinsClubSchema = new mongoose.Schema({
@@ -12,7 +11,7 @@ const rollinsClubSchema = new mongoose.Schema({
   },
   "Image URL": {  // Adding the image URL field
     type: String,
-    required: false  // Assuming the image URL might not be required
+    required: true  // Assuming the image URL might not be required
   }
   // You can add other fields here as needed, following the structure of your documents
 });

@@ -1,10 +1,10 @@
-const Club = require('../models/club.js'); // Ensure the path matches the location of your model file
+const RollinsClub = require('../models/club.js');
 
 // Fetch all clubs
 exports.getAllClubs = async (req, res) => {
   try {
-    const clubs = await Club.find();
-    res.json(clubs); // Sends all clubs as JSON
+    const clubs = await RollinsClub.find();
+    res.json(clubs); // Sends all clubs as JSON including Image URL
   } catch (error) {
     // Consistently send errors as JSON
     res.status(500).json({ message: "Error fetching clubs", error: error.message });
@@ -14,9 +14,12 @@ exports.getAllClubs = async (req, res) => {
 // Add a new club
 exports.addClub = async (req, res) => {
   try {
-    const newClub = new Club({
-      "Activity Name": req.body["Activity Name"],
-      "Description": req.body.Description,
+    const { ActivityName, Description, ImageURL } = req.body;
+
+    const newClub = new RollinsClub({
+      "Activity Name": ActivityName,
+      "Description": Description,
+      "Image URL": ImageURL
     });
 
     const savedClub = await newClub.save();
@@ -26,8 +29,3 @@ exports.addClub = async (req, res) => {
     res.status(400).json({ message: "Error adding new club", error: error.message });
   }
 };
-
-// Placeholder for other CRUD operations
-// exports.getClubById = async (req, res) => { ... };
-// exports.updateClub = async (req, res) => { ... };
-// exports.deleteClub = async (req, res) => { ... };
