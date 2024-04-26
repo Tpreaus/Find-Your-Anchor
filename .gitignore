@@ -1,5 +1,4 @@
 # Node.js dependencies
 node_modules/
 
-# Environment-specific configuration files
-.env/
+ai/.env
