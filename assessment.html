@@ -87,11 +87,102 @@
       <div class="container py-4 box-background">
         <div class="p-5 mb-4 bg-body-tertiary rounded-3">
           <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold" style="text-transform: uppercase;">Explore your full potential at Rollins College</h1>
-            <p class="col-md-8 fs-4">
-              Our assessment utilizes the power of AI to tailor the college experience for you.
-            </p>
-            <button id="transformBtn" class="btn btn-primary btn-lg" type="button">Transform</button>
+            <h1 class="display-5 fw-bold" style="text-transform: uppercase;">Assessment</h1>
+            <!--QUESTIONNAIRE-->
+            <form>
+              <div class="row">
+                <!--QUESTION 1-->
+                <div class="col">
+                  <div class="my-3">
+                    <!-- Multiple Choice Number 1-->
+                    <h4 class="mb-3 pt-2">How do you spend your free time?</h4>
+                    <select class="form-select" style="width: 20rem;">
+                      <option selected>Select ...</option>
+                      <option value="1">Being active and exercising</option>
+                      <option value="2">Reading or learning new things</option>
+                      <option value="3">Spending time outdoors</option>
+                      <option value="3">Creative hobbies</option>
+                      <option value="3">Spending time with friends</option>
+                      <option value="3">Playing video games</option>
+                      <option value="3">Relaxing</option>
+                    </select>
+                  </div>
+                </div>
+                 <!--QUESTION 2-->
+                 <div class="col">
+                  <div class="my-3">
+                    <!-- Multiple Choice Number 2-->
+                    <h4 class="mb-3 pt-2">In your opinion, what should college be about?</h4>
+                    <select class="form-select" style="width: 20rem;">
+                      <option selected>Select ...</option>
+                      <option value="1">Pursue new interests</option>
+                      <option value="2">Make new friends</option>
+                      <option value="3">Develop skills for college and career</option>
+                      <option value="3">Have fun and/or relax</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="my-3">
+                  <!-- Multiple Choice Number 1-->
+                  <h4 class="mb-3 pt-2 br-3">In a sentence or two, describe what kinds of environments or situations make you happiest.</h4>
+                  <textarea style="width: 25rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!--QUESTION 3-->
+                <div class="col">
+                  <div class="my-3">
+                    <!-- Multiple Choice Number 1-->
+                    <h4 class="mb-3 pt-2">Which describes yourself best?</h4>
+                    <select class="form-select" style="width: 20rem;">
+                      <option selected>Select ...</option>
+                      <option value="1">Always up for something new</option>
+                      <option value="2">A mix of new and familiar</option>
+                      <option value="3">Prefer sticking to my usual favorites</option>
+                    </select>
+                  </div>
+                </div>
+                <!--QUESTION 4-->
+                <div class="col">
+                  <div class="my-3">
+                    <!-- Multiple Choice Number 1-->
+                    <h4 class="mb-3 pt-2">How do you spend your free time?</h4>
+                    <select class="form-select" style="width: 20rem;">
+                      <option selected>Select ...</option>
+                      <option value="1">Being active and exercising</option>
+                      <option value="2">Reading or learning new things</option>
+                      <option value="3">Spending time outdoors</option>
+                      <option value="3">Creative hobbies</option>
+                      <option value="3">Spending time with friends</option>
+                      <option value="3">Playing video games</option>
+                      <option value="3">Relaxing</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="my-3">
+                  <!-- Multiple Choice Number 1-->
+                  <h4 class="mb-3 pt-2">What are some obsessions or hobbies of yours?</h4>
+                  <textarea style="width: 25rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+                </div>
+              </div>
+              <div class="style"></div>
+              <button id="transformBtn" class="btn0  btn-primary btn-lg" type="submit">Submit Responses</button>
+            </form>
+
+
           </div>
         </div>
       </div>
