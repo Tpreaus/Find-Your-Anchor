@@ -29,3 +29,4 @@ exports.addClub = async (req, res) => {
     res.status(400).json({ message: "Error adding new club", error: error.message });
   }
 };
+
