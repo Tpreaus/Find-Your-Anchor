@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test HTML for AI Endpoint</title>
+</head>
+<body>
+    <h1>Test HTML for AI Endpoint</h1>
+    <form id="aiForm">
+        <label for="inputData">Input Data:</label><br>
+        <input type="text" id="inputData" name="inputData"><br><br>
+        <button type="button" onclick="runAI()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        async function runAI() {
+            const inputData = document.getElementById('inputData').value;
+
+            const response = await fetch('http://localhost:3005/api/ai', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ inputData })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                document.getElementById('output').textContent = data.output;
+            } else {
+                console.error('Error:', data.error);
+                document.getElementById('output').textContent = 'Error occurred. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>
