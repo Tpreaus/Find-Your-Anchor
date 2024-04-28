@@ -89,100 +89,83 @@
           <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold" style="text-transform: uppercase;">Assessment</h1>
             <!--QUESTIONNAIRE-->
-            <form>
+            <form id="surveyForm">
               <div class="row">
-                <!--QUESTION 1-->
-                <div class="col">
-                  <div class="my-3">
-                    <!-- Multiple Choice Number 1-->
-                    <h4 class="mb-3 pt-2">How do you spend your free time?</h4>
-                    <select class="form-select" style="width: 20rem;">
-                      <option selected>Select ...</option>
-                      <option value="1">Being active and exercising</option>
-                      <option value="2">Reading or learning new things</option>
-                      <option value="3">Spending time outdoors</option>
-                      <option value="3">Creative hobbies</option>
-                      <option value="3">Spending time with friends</option>
-                      <option value="3">Playing video games</option>
-                      <option value="3">Relaxing</option>
-                    </select>
+                  <!-- QUESTION 1 -->
+                  <div class="col">
+                      <div class="my-3">
+                          <!-- Multiple Choice Number 1 -->
+                          <h4 class="mb-3 pt-2">How do you spend your free time?</h4>
+                          <select id="freeTime" class="form-select" style="width: 20rem;">
+                              <option value="" selected disabled>Select ...</option>
+                              <option value="1">Being active and exercising</option>
+                              <option value="2">Reading or learning new things</option>
+                              <option value="3">Spending time outdoors</option>
+                              <option value="4">Creative hobbies</option>
+                              <option value="5">Spending time with friends</option>
+                              <option value="6">Playing video games</option>
+                              <option value="7">Relaxing</option>
+                          </select>
+                      </div>
                   </div>
-                </div>
-                 <!--QUESTION 2-->
-                 <div class="col">
-                  <div class="my-3">
-                    <!-- Multiple Choice Number 2-->
-                    <h4 class="mb-3 pt-2">In your opinion, what should college be about?</h4>
-                    <select class="form-select" style="width: 20rem;">
-                      <option selected>Select ...</option>
-                      <option value="1">Pursue new interests</option>
-                      <option value="2">Make new friends</option>
-                      <option value="3">Develop skills for college and career</option>
-                      <option value="3">Have fun and/or relax</option>
-                    </select>
+                  <!-- QUESTION 2 -->
+                  <div class="col">
+                      <div class="my-3">
+                          <!-- Multiple Choice Number 2 -->
+                          <h4 class="mb-3 pt-2">In your opinion, what should college be about?</h4>
+                          <select id="collegePurpose" class="form-select" style="width: 20rem;">
+                              <option value="" selected disabled>Select ...</option>
+                              <option value="1">Pursue new interests</option>
+                              <option value="2">Make new friends</option>
+                              <option value="3">Develop skills for college and career</option>
+                              <option value="4">Have fun and/or relax</option>
+                          </select>
+                      </div>
                   </div>
-                </div>
               </div>
-
+          
               <div class="row">
-                <div class="my-3">
-                  <!-- Multiple Choice Number 1-->
-                  <h4 class="mb-3 pt-2 br-3">In a sentence or two, describe what kinds of environments or situations make you happiest.</h4>
-                  <textarea style="width: 25rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <!--QUESTION 3-->
-                <div class="col">
                   <div class="my-3">
-                    <!-- Multiple Choice Number 1-->
-                    <h4 class="mb-3 pt-2">Which describes yourself best?</h4>
-                    <select class="form-select" style="width: 20rem;">
-                      <option selected>Select ...</option>
-                      <option value="1">Always up for something new</option>
-                      <option value="2">A mix of new and familiar</option>
-                      <option value="3">Prefer sticking to my usual favorites</option>
-                    </select>
+                      <!-- Short Response Number 1 -->
+                      <h4 class="mb-3 pt-2 br-3">In a sentence or two, describe what kinds of environments or situations make you happiest.</h4>
+                      <textarea id="happinessDescription" style="width: 20rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
+                      <div class="invalid-feedback">
+                          Valid description is required.
+                      </div>
                   </div>
-                </div>
-                <!--QUESTION 4-->
-                <div class="col">
-                  <div class="my-3">
-                    <!-- Multiple Choice Number 1-->
-                    <h4 class="mb-3 pt-2">How do you spend your free time?</h4>
-                    <select class="form-select" style="width: 20rem;">
-                      <option selected>Select ...</option>
-                      <option value="1">Being active and exercising</option>
-                      <option value="2">Reading or learning new things</option>
-                      <option value="3">Spending time outdoors</option>
-                      <option value="3">Creative hobbies</option>
-                      <option value="3">Spending time with friends</option>
-                      <option value="3">Playing video games</option>
-                      <option value="3">Relaxing</option>
-                    </select>
-                  </div>
-                </div>
               </div>
-
+          
               <div class="row">
-                <div class="my-3">
-                  <!-- Multiple Choice Number 1-->
-                  <h4 class="mb-3 pt-2">What are some obsessions or hobbies of yours?</h4>
-                  <textarea style="width: 25rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-                </div>
+                  <!-- QUESTION 3 -->
+                  <div class="col">
+                      <div class="my-3">
+                          <!-- Multiple Choice Number 3 -->
+                          <h4 class="mb-3 pt-2">Which describes yourself best?</h4>
+                          <select id="selfDescription" class="form-select" style="width: 20rem;">
+                              <option value="" selected disabled>Select ...</option>
+                              <option value="1">Always up for something new</option>
+                              <option value="2">A mix of new and familiar</option>
+                              <option value="3">Prefer sticking to my usual favorites</option>
+                          </select>
+                      </div>
+                  </div>
               </div>
-              <div class="style"></div>
-              <button id="transformBtn" class="btn0  btn-primary btn-lg" type="submit">Submit Responses</button>
+          
+              <div class="row">
+                  <div class="my-3">
+                      <!-- Short Response Number 2 -->
+                      <h4 class="mb-3 pt-2">What are some obsessions or hobbies of yours?</h4>
+                      <textarea id="hobbies" style="width: 20rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
+                      <div class="invalid-feedback">
+                          Valid hobbies are required.
+                      </div>
+                  </div>
+              </div>
+          
+              <button id="transformBtn" class="btn0 mt-5 btn-primary btn-lg" type="submit">Submit Responses</button>
             </form>
 
-
+            <h5 id="result" style="display: none;"></h5>
           </div>
         </div>
       </div>
@@ -195,26 +178,37 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     <script>
-      document.getElementById("transformBtn").addEventListener("click", function() {
-        // Change the header text
-        document.querySelector("h1.display-5").textContent = "New Header Text";
+      document.getElementById('surveyForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
 
-        // Add a text box underneath the paragraph
-        var textBox = document.createElement("input");
-        textBox.setAttribute("type", "text");
-        textBox.setAttribute("placeholder", "Enter your text here");
-        textBox.classList.add("form-control");
+        // Get references to all form elements
+        const freeTimeSelect = document.getElementById('freeTime');
+        const collegePurposeSelect = document.getElementById('collegePurpose');
+        const happinessDescriptionTextarea = document.getElementById('happinessDescription');
+        const selfDescriptionSelect = document.getElementById('selfDescription');
+        const hobbiesTextarea = document.getElementById('hobbies');
 
-        // Get the container for the paragraph and append the text box after it
-        var container = document.querySelector(".container-fluid");
-        var paragraph = document.querySelector(".container-fluid p");
-        container.insertBefore(textBox, paragraph.nextSibling);
+        // Get selected options and input values
+        const freeTime = freeTimeSelect.options[freeTimeSelect.selectedIndex].text;
+        const collegePurpose = collegePurposeSelect.options[collegePurposeSelect.selectedIndex].text;
+        const happinessDescription = happinessDescriptionTextarea.value;
+        const selfDescription = selfDescriptionSelect.options[selfDescriptionSelect.selectedIndex].text;
+        const hobbies = hobbiesTextarea.value;
 
-        // Change the button text and class
-        var proceedBtn = document.getElementById("transformBtn");
-        proceedBtn.textContent = "Continue";
-        proceedBtn.classList.remove("btn-primary");
-        proceedBtn.classList.add("btn-success");
+        // Construct the final string
+        const formDataString = `1. I spend my free time: ${freeTime}\n
+        2. College is about: ${collegePurpose}\n
+        3. Environments or situations that make me happiest: ${happinessDescription}\n
+        4. I like to try: ${selfDescription}\n
+        5. Obsessions or hobbies: ${hobbies}`;
+
+        // Display the result in the h5 element
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = formDataString;
+
+        /*
+        resultElement.style.display = 'block';
+        */
       });
     </script>
   </body>
