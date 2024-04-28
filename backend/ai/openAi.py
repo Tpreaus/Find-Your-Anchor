@@ -2,7 +2,7 @@ from openai import OpenAI
 import requests
 from dotenv import load_dotenv
 import os
- 
+import sys
 
 clubs = []  # Initialize an empty list to store the clubs
 
@@ -42,6 +42,13 @@ except Exception as e:
     print('Failed to fetch clubs. Please check the error message for details.')
 
 
+if len(sys.argv) < 2:
+    print("Usage: python openAi.py <input_data>")
+    sys.exit(1)
+
+user_input_data = sys.argv[1]
+
+print("Input received:", user_input_data)
 
 prompt_lines = []
 x = 0
@@ -68,7 +75,7 @@ client = OpenAI(api_key=api_key)
 completion = client.chat.completions.create(model="gpt-3.5-turbo",
 messages=[
     {"role": "system", "content": prompt},
-    {"role": "user", "content": "I like the moutains, being active, and rowing what three clubs would you recommend?, Using only the specified clubs, must have existing club ID"},
+    {"role": "user", "content": user_input_data},
 ])
 
 # Extract and print the completed response message
