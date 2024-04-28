@@ -75,13 +75,31 @@
 
                 <div class="col-12">
                   <label for="address" class="form-label">Name of the club</label>
-                  <input type="text" class="form-control" id="address" placeholder="Tau Kappa Epsilon" required="">
+                  <input type="text" class="form-control" id="address" placeholder="Example Club" required="">
                   <div class="invalid-feedback">
                     Please enter the name of the club.
                   </div>
                 </div>
+                
+                
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Admin Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Not Trevor Dorfman" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Admin Email Address</label>
+                  <input type="email" class="form-control" id="floatingInput" placeholder="user@example.com" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
 
-                <div class="col-md-5">
+
+                <div class="col-md-12">
                   <label for="category" class="form-label">Category</label>
                   <select class="form-select" id="category" required="">
                     <option value="">Choose a category</option>
@@ -100,23 +118,26 @@
                     Please select a valid category.
                   </div>
                 </div>
-                
-                
-                <div class="col-sm-6">
-                  <label for="firstName" class="form-label">Club Name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+
+                <div class="col-sm-12">
+                  <label for="username" class="form-label">Instagram Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required="">
                   <div class="invalid-feedback">
-                    Valid first name is required.
+                      Your username is required.
+                    </div>
                   </div>
                 </div>
-    
-                <div class="col-sm-6">
-                  <label for="lastName" class="form-label">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+
+                <div class="col-sm-12">
+                  <label for="lastName" class="form-label">GroupMe Link</label>
+                  <input type="text" class="form-control" id="floatingInput" placeholder="user@example.com" value="" required="">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
                 </div>
+
 
                 <div class="row g-5">
                   <div class="col-sm-6 my-3">
