@@ -392,3 +392,45 @@ main{
   object-position: center; /* Center the image within the container */
 }
 
+body, .bg-body-tertiary, .product {
+  background-color: white; /* Consistent background color */
+  color: #333; /* Improved readability */
+}
+
+.card-img-top {
+  height: 200px; /* Ensure uniform image height */
+  object-fit: cover; /* Better image handling */
+}
+
+.card {
+  margin: 10px; /* Space around cards */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow  */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+  transform: scale(1.03); /* Slight scale on hover for interactivity */
+}
+
+.card-body {
+  padding: 20px; /* More space inside the card */
+}
+
+.card-title {
+  margin-bottom: 15px; /* Space below the title */
+  color: #0056b3; /* Theme color for titles */
+}
+
+.card-text {
+  font-size: 14px; /* Adjusted text size  */
+  color: #666; /* Soft color for text */
+}
+
+/* Grid adjustments */
+@media (min-width: 992px) {
+  .row-cols-lg-5 .col {
+    flex: 0 0 auto;
+    width: 20%; /* More columns on larger screens */
+  }
+}
