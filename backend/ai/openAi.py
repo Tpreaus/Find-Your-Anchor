@@ -7,7 +7,7 @@ import os
 clubs = []  # Initialize an empty list to store the clubs
 
 # Define the URL of the API endpoint
-api_url = 'http://3.21.246.221/api/clubs'
+api_url = 'https://club.theodorepreaus.xyz/api/clubs'
 
 try:
     # Make an HTTP GET request to the API endpoint
@@ -46,7 +46,7 @@ except Exception as e:
 prompt_lines = []
 x = 0
 
-prompt_lines.append("Here are the clubs you can suggest:")
+prompt_lines.append("Here are the clubs you can suggest, DO NOT MAKE UP CLUBS:")
 
 for club in clubs:
     prompt_lines.append(f"Club id: " + str(x))
@@ -68,7 +68,7 @@ client = OpenAI(api_key=api_key)
 completion = client.chat.completions.create(model="gpt-3.5-turbo",
 messages=[
     {"role": "system", "content": prompt},
-    {"role": "user", "content": "I love to play chess, community service, and cats what three clubs would you recommend?"},
+    {"role": "user", "content": "I like the moutains, being active, and rowing what three clubs would you recommend?, Using only the specified clubs, must have existing club ID"},
 ])
 
 # Extract and print the completed response message
