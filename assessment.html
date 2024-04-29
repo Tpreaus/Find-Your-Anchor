@@ -226,52 +226,17 @@
             const resultElement = document.getElementById('result');
             const resultString = data.output;
 
-            // Assign the result string to the text content of the element
             resultElement.textContent = resultString;
 
             // Show the result element
             resultElement.style.display = 'block';
-
-            function extractIDs(inputString) {
-                // Define the regular expression pattern to match the "Club id: " part followed by one or more digits (\d+).
-                var pattern = /id:\s*(\d+)/g;
-                var ids = [];
-                var match;
-
-                // Use a loop to find all matches in the input string
-                while ((match = pattern.exec(inputString)) !== null) {
-                    ids.push(match[1]);
-                }
-              return ids;
-            }
-          // Extract the IDs from the input string
-          var ids = extractIDs(resultString);
-
-          // Print the extracted IDs
-          console.log("IDs:", ids);
+            
+            // Print the extracted IDs
+            console.log("IDs:", ids);
         } catch (error) {
             console.error('Error:', error);
-            // Handle error
-        }
-        
-        // Access API to get club by ID
-        for (const id of ids) {
-          try {
-              const response = await fetch(`http://localhost:3005/api/clubs/id/${id}`);
-              if (!response.ok) {
-                throw new Error(`Failed to get club with ID ${id}`);
-              }
-              const club = await response.json();
-              console.log(`Club with ID ${id}:`, club);
-              // Do something with the club data
-            } catch (error) {
-              console.error('Error:', error);
               // Handle error
-            }
-          }
-
-
-
+        }
       });
     </script>
   </body>

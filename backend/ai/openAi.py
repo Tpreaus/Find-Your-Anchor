@@ -52,11 +52,11 @@ user_input_data = sys.argv[1]
 prompt_lines = []
 x = 0
 
-prompt_lines.append("Here are the clubs you can suggest, please answer with the ID # and name only no discription, DO NOT MAKE UP CLUBS, please answer in format - Id: <id> Name: <name>")
+prompt_lines.append("Here are the clubs you can suggest, please answer with the and name and descriptions ONLY, DO NOT MAKE UP CLUBS,")
 
 for club in clubs:
-    prompt_lines.append(f"Club id: " + str(x))
-    x += 1
+    #prompt_lines.append(f"Club id: " + str(x))
+    #x += 1
     prompt_lines.append(f"Club Name: {club['Club Name']}")
     prompt_lines.append(f"Club Description: {club['Club Description']}")
     prompt_lines.append("")  # Add an empty line between clubs for separation
