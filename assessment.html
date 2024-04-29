@@ -127,8 +127,8 @@
               <div class="row">
                   <div class="my-3">
                       <!-- Short Response Number 1 -->
-                      <h4 class="mb-3 pt-2 br-3">In a sentence or two, describe what kinds of environments or situations make you happiest.</h4>
-                      <textarea id="happinessDescription" style="width: 20rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Water polo, bird watching and roller skating" name="shortResponse" maxlength="150" required></textarea>
+                      <h4 class="mb-3 pt-2 br-3">Describe what kinds of environments or situations make you happiest.</h4>
+                      <textarea id="happinessDescription" style="width: 20rem; height: 5rem; resize: none;" class="form-control" placeholder="Ex: Mountains, the ocean, nature, with friends" name="shortResponse" maxlength="150" required></textarea>
                       <div class="invalid-feedback">
                           Valid description is required.
                       </div>
@@ -195,18 +195,14 @@
         const hobbies = hobbiesTextarea.value;
 
         // Construct the final string
-        const formDataString = {
-                "I spend my free time": freeTime,
-                "College is about": collegePurpose,
-                "Environments or situations that make me happiest": happinessDescription,
-                "I like to try": selfDescription,
-                "Obsessions or hobbies": hobbies,
-                "Please make a suggestion based on my responses for three clubs that I might enjoy": "Make sure the club actually exists and has a club ID"
-        };
-
-        console.log(JSON.stringify(formDataString));
-
-                try {
+        const formDataString = `I spend my free time: ${freeTime}, 
+                        College is about: ${collegePurpose}, 
+                        Environments or situations that make me happiest: ${happinessDescription}, 
+                        I like to try: ${selfDescription}, 
+                        Obsessions or hobbies: ${hobbies}, 
+                        Please make a suggestion based on my responses for three clubs that I might enjoy. 
+                        Make sure the club actually exists and has a club ID`;
+        try {
             // Send a POST request to the API endpoint
             const response = await fetch('http://localhost:3005/api/ai', {
                 method: 'POST',
