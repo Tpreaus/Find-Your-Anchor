@@ -224,10 +224,16 @@
 
             // Display the AI response in the result element
             const resultElement = document.getElementById('result');
-            resultElement.textContent = data.output;
+            const resultString = data.output;
+
+            // Assign the result string to the text content of the element
+            resultElement.textContent = resultString;
 
             // Show the result element
             resultElement.style.display = 'block';
+
+            
+
         } catch (error) {
             console.error('Error:', error);
             // Handle error
