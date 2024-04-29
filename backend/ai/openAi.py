@@ -51,7 +51,7 @@ user_input_data = sys.argv[1]
 prompt_lines = []
 x = 0
 
-prompt_lines.append("Here are the clubs you can suggest, DO NOT MAKE UP CLUBS:")
+prompt_lines.append("Here are the clubs you can suggest, please answer with the ID # and name only, DO NOT MAKE UP CLUBS:")
 
 for club in clubs:
     prompt_lines.append(f"Club id: " + str(x))
