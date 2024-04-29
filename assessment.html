@@ -205,7 +205,7 @@
         };
 
 
-                try {
+        try {
             // Send a POST request to the API endpoint
             const response = await fetch('https://club.theodorepreaus.xyz/api/ai', {
                 method: 'POST',
@@ -226,15 +226,16 @@
             const resultElement = document.getElementById('result');
             const resultString = data.output;
 
-            // Assign the result string to the text content of the element
             resultElement.textContent = resultString;
 
             // Show the result element
-            resultElement.style.display = 'block';    
-
+            resultElement.style.display = 'block';
+            
+            // Print the extracted IDs
+            console.log("IDs:", ids);
         } catch (error) {
             console.error('Error:', error);
-            // Handle error
+              // Handle error
         }
       });
     </script>
