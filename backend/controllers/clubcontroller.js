@@ -12,6 +12,16 @@ exports.getAllClubs = async (req, res) => {
   }
 }
 
+exports.getClubById = async (req, res) => {
+  try {
+    const clubId = req.params.id;
+    const club = await RollinsClub.findById(clubId);
+    res.json(club);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching club", error: error.message });
+  }
+}
+
 
 // Add a new club
 exports.addClub = async (req, res) => {
