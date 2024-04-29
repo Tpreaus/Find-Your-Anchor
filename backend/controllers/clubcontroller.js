@@ -42,3 +42,24 @@ exports.addClub = async (req, res) => {
   }
 }
 
+exports.fetchByIndex = async (req, res) => {
+  try {
+    const index = parseInt(req.params.index); // Convert string to integer
+    if (isNaN(index)) {
+      return res.status(400).json({ message: "Invalid index provided" });
+    }
+
+    // Query the RollinsClub collection for the club at the specified index
+    const club = await RollinsClub.findOne({}, { clubs: { $slice: [index, 1] } });
+
+    if (!club) {
+      return res.status(404).json({ message: "Club not found at the specified index" });
+    }
+
+    res.json({ club });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching club", error: error.message });
+  }
+}
+
+
