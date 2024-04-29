@@ -163,14 +163,35 @@
               </div>
           
               <button id="transformBtn" class="btn0 mt-5 btn-primary btn-lg" type="submit">Submit Responses</button>
+            
             </form>
+            <h5 id="result" style="display: none;"></h5>
+                    <!-- Container for displaying club cards -->
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="clubsList">
 
             <h5 id="result" style="display: none;"></h5>
           </div>
         </div>
       </div>
+      <!-- <div id="clubNamesContainer"></div> -->
+
 
     </main>
+    <!-- Add a modal at the end of the body -->
+<div class="modal fade" id="clubModal" tabindex="-1" aria-labelledby="clubModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="clubModalLabel">Club Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="clubDetailsContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     <!------------------------------------- JAVASCRIPT -------------------------------------------------->
@@ -179,63 +200,137 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     <script>
       document.getElementById('surveyForm').addEventListener('submit', async function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        const freeTimeSelect = document.getElementById('freeTime');
-        const collegePurposeSelect = document.getElementById('collegePurpose');
-        const happinessDescriptionTextarea = document.getElementById('happinessDescription');
-        const selfDescriptionSelect = document.getElementById('selfDescription');
-        const hobbiesTextarea = document.getElementById('hobbies');
-        
-        // Get selected options and input values
-        const freeTime = freeTimeSelect.options[freeTimeSelect.selectedIndex].text;
-        const collegePurpose = collegePurposeSelect.options[collegePurposeSelect.selectedIndex].text;
-        const happinessDescription = happinessDescriptionTextarea.value;
-        const selfDescription = selfDescriptionSelect.options[selfDescriptionSelect.selectedIndex].text;
-        const hobbies = hobbiesTextarea.value;
-
-        // Construct the final string
-        const formDataString = {
-                "I spend my free time": freeTime,
-                "In College I want to": collegePurpose,
-                "Environments or situations that make me happiest": happinessDescription,
-                "I am": selfDescription,
-                "I have these hobbies,": hobbies,
-                "Please make a suggestion based on my responses for three clubs that I might enjoy": "Make sure the club actually exists and has a club ID"
-        };
-
-
-        try {
-            // Send a POST request to the API endpoint
-            const response = await fetch('https://club.theodorepreaus.xyz/api/ai', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formDataString)
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to get AI response');
-            }
-
-            // Parse the response JSON
-            const data = await response.json();
-
-            // Display the AI response in the result element
-            const resultElement = document.getElementById('result');
-            const resultString = data.output;
-
-            resultElement.textContent = resultString;
-
-            // Show the result element
-            resultElement.style.display = 'block';
-            
-            // Print the extracted IDs
+          event.preventDefault(); // Prevent form submission
+      
+          const freeTimeSelect = document.getElementById('freeTime');
+          const collegePurposeSelect = document.getElementById('collegePurpose');
+          const happinessDescriptionTextarea = document.getElementById('happinessDescription');
+          const selfDescriptionSelect = document.getElementById('selfDescription');
+          const hobbiesTextarea = document.getElementById('hobbies');
+      
+          // Get selected options and input values
+          const formDataString = {
+              "I spend my free time": freeTimeSelect.options[freeTimeSelect.selectedIndex].text,
+              "In College I want to": collegePurposeSelect.options[collegePurposeSelect.selectedIndex].text,
+              "Environments or situations that make me happiest": happinessDescriptionTextarea.value,
+              "I am": selfDescriptionSelect.options[selfDescriptionSelect.selectedIndex].text,
+              "I have these hobbies": hobbiesTextarea.value,
+              "Please make a suggestion based on my responses for three clubs that I might enjoy": "Make sure the club actually exists and has a club ID"
+          };
+      
+          console.log('Form Data:', formDataString); // Debug: Log form data
+      
+          try {
+              const response = await fetch('https://club.theodorepreaus.xyz/api/ai', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formDataString)
+              });
+      
+              console.log('API Response:', response); // Debug: Log raw response
+      
+              if (!response.ok) {
+                  throw new Error('Failed to get AI response');
+              }
+      
+              const data = await response.json();
+              console.log('API JSON Data:', data); // Debug: Log JSON data
+      
+              if (typeof data.output === 'string') {
+                  const clubNames = extractClubNames(data.output);
+                  console.log('Extracted Club Names:', clubNames); // Debug: Log extracted names
+      
+                  if (clubNames.length > 0) {
+                      await displayClubs(clubNames);
+                  } else {
+                      showResult('No clubs found.');
+                  }
+              } else {
+                  console.log('data.output is not a string, received:', data.output);
+                  showResult('Received non-string data');
+              }
           } catch (error) {
-            console.error(error);
+              console.error('Error:', error);
+              showResult(`Error: ${error.message}`);
           }
       });
-    </script>
+      
+      function extractClubNames(inputString) {
+          var pattern = /Name:\s*(.+)|\*\*(.+?)\*\*/g;
+          var names = [];
+          var match;
+          while ((match = pattern.exec(inputString)) !== null) {
+              names.push((match[1] || match[2]).trim());
+          }
+          return names;
+      }
+      
+      async function displayClubs(clubNames) {
+          const clubDetailsContainer = document.getElementById('clubDetailsContainer');
+          clubDetailsContainer.innerHTML = ''; // Clear previous content
+      
+          for (const name of clubNames) {
+              try {
+                  const clubDetails = await fetchClubDetails(name);
+                  if (!clubDetails) {
+                      console.log(`No details found for: ${name}`);
+                      continue; // Skip if no details found and log the issue
+                  }
+      
+                  const card = document.createElement('div');
+                  card.className = 'card mb-3';
+                  const image = document.createElement('img');
+                  image.src = clubDetails['Image URL'] || 'assets/Screenshot 2024-04-23 at 4.42.20 PM.png';
+                  image.className = 'card-img-top';
+                  image.alt = `Image of ${clubDetails['Activity Name']}`;
+                  image.style = 'height: 200px; object-fit: cover;';
+      
+                  const cardBody = document.createElement('div');
+                  cardBody.className = 'card-body';
+                  const title = document.createElement('h5');
+                  title.className = 'card-title';
+                  title.textContent = clubDetails['Activity Name'];
+                  const description = document.createElement('p');
+                  description.className = 'card-text';
+                  description.textContent = clubDetails['Description'];
+      
+                  cardBody.appendChild(title);
+                  cardBody.appendChild(description);
+                  card.appendChild(image);
+                  card.appendChild(cardBody);
+                  clubDetailsContainer.appendChild(card);
+              } catch (error) {
+                  console.error(`Error fetching details for club: ${name}`, error);
+              }
+          }
+      
+          const clubModal = new bootstrap.Modal(document.getElementById('clubModal'));
+          clubModal.show();
+      }
+      
+      function showResult(message) {
+          const resultElement = document.getElementById('result');
+          resultElement.textContent = message;
+          resultElement.style.display = 'block';
+      }
+      
+      async function fetchClubDetails(clubName) {
+          try {
+              const response = await fetch(`https://club.theodorepreaus.xyz/api/clubs?name=${encodeURIComponent(clubName)}`);
+              if (!response.ok) throw new Error(`Failed to fetch clubs. Status: ${response.status}`);
+              const clubData = await response.json();
+              return clubData.find(club => club['Activity Name'] === clubName);
+          } catch (error) {
+              console.error(`Error fetching details for ${clubName}:`, error);
+              return null;
+          }
+      }
+      </script>
+      
+      
+    
+      
   </body>
 </html>
