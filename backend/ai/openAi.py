@@ -48,8 +48,6 @@ if len(sys.argv) < 2:
 
 user_input_data = sys.argv[1]
 
-print("Input received:", user_input_data)
-
 prompt_lines = []
 x = 0
 
