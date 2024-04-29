@@ -187,14 +187,12 @@ main{
   padding-top: 0 !important;
 }
 
-.ri-group-fill, 
-.ri-school-fill,
-.ri-landscape-fill,
-.ri-time-fill, 
-.ri-mac-fill, 
-.ri-shirt-fill
+.ri-anchor-line, 
+.ri-shirt-fill,
+.ri-openai-fill,
+.ri-timer-flash-fill
 {
-  color: rgb(56,99,129);
+  color: #18273E !important;
 }
 
 .h1{

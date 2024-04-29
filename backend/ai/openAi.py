@@ -4,7 +4,9 @@ from dotenv import load_dotenv
 import os
 import sys
 
-load_dotenv()  # Load environment variables from .env.
+clubs = []  # Initialize an empty list to store the clubs
+
+# Define the URL of the API endpoint
 api_url = 'https://club.theodorepreaus.xyz/api/clubs'
 api_key = os.getenv("OPENAI_API_KEY")
 
